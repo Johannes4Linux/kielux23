@@ -1,0 +1,17 @@
+/dts-v1/;
+/plugin/;
+/ {
+	fragment@0 {
+		target = <&i2c1>;
+		__overlay__ {
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			my_adc: my_adc@17 {
+				compatible = "brightlight,myadc";
+				reg = <0x17>;
+				status = "okay";
+			};
+		};
+	};
+};
